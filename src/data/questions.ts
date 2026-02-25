@@ -76,10 +76,6 @@ export const team1Questions: Omit<Question, "id" | "isAnswered" | "isFound">[] =
 export const team2Questions: Omit<Question, "id" | "isAnswered" | "isFound">[] =
   [
     {
-      question: "Thời điểm bắt đầu Hội nghị hợp nhất các tổ chức cộng sản?",
-      answer: "THANGMOT1930",
-    },
-    {
       question:
         "Một trong hai đại biểu của Đông Dương Cộng sản Đảng dự Hội nghị thành lập Đảng?",
       answer: "NGUYENDUCCANH",
@@ -137,6 +133,10 @@ export const team2Questions: Omit<Question, "id" | "isAnswered" | "isFound">[] =
       question:
         "Tổ chức đã chỉ thị cho Nguyễn Ái Quốc hợp nhất các tổ chức cộng sản?",
       answer: "QUOCTECONGSAN",
+    },
+    {
+      question: "Thời điểm bắt đầu Hội nghị hợp nhất các tổ chức cộng sản?",
+      answer: "THANGMOT1930",
     },
   ];
 

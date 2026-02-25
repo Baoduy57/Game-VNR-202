@@ -1,36 +1,181 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎮 Trivia Word Search - Game Lịch Sử Đảng Cộng Sản Việt Nam
 
-## Getting Started
+Game giáo dục kết hợp **Trắc nghiệm** và **Tìm từ** về lịch sử Đảng Cộng sản Việt Nam, được thiết kế cho hoạt động thi đấu giữa 2 đội.
 
-First, run the development server:
+## 📋 Tổng quan
+
+Game này kết hợp hai thể loại chơi:
+
+1. **Trắc nghiệm (Trivia)**: Trả lời các câu hỏi về lịch sử để mở khóa từ
+2. **Tìm từ (Word Search)**: Tìm các từ đã mở khóa trên lưới 20×20 bằng cách kéo chuột
+
+### ✨ Tính năng chính
+
+- 🎓 **Chế độ Demo**: Thực hành với 5 câu hỏi đơn giản, không giới hạn thời gian
+- 👥 **Chế độ Thi đấu**: 2 đội chơi luân phiên với 60 giây mỗi lượt
+- 📚 **30 câu hỏi lịch sử**: Mỗi đội nhận 15 câu hỏi khác nhau về Đảng Cộng sản Việt Nam
+- ⏱️ **Timer động**: Đếm ngược 60 giây tự động, hiển thị progress bar
+- 🎯 **Hệ thống điểm**:
+  - +10 điểm cho mỗi câu trả lời đúng
+  - +20 điểm cho mỗi từ tìm được
+- 🔤 **Lưới 20×20**: Hỗ trợ từ dài tới 27 ký tự (ngang/dọc/chéo)
+- 📊 **Bảng điểm trực tiếp**: Theo dõi điểm số và tiến độ của từng đội
+- 🎨 **UI thân thiện**: Giao diện đẹp mắt, phù hợp chiếu lên màn hình lớn
+
+## 🛠️ Công nghệ sử dụng
+
+- **Next.js** 16.1.6 (App Router)
+- **React** 19.2.3
+- **TypeScript** 5
+- **Tailwind CSS** 4
+- **Node.js** (LTS)
+
+## 🚀 Cài đặt và Chạy
+
+### Yêu cầu hệ thống
+
+- Node.js 18.x trở lên
+- npm, yarn, pnpm hoặc bun
+
+### Bước 1: Clone repository
+
+```bash
+git clone <repository-url>
+cd game
+```
+
+### Bước 2: Cài đặt dependencies
+
+```bash
+npm install
+# hoặc
+yarn install
+# hoặc
+pnpm install
+# hoặc
+bun install
+```
+
+### Bước 3: Chạy development server
 
 ```bash
 npm run dev
-# or
+# hoặc
 yarn dev
-# or
+# hoặc
 pnpm dev
-# or
+# hoặc
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Mở trình duyệt và truy cập [http://localhost:3000](http://localhost:3000)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Build cho production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## 🎯 Cách chơi
 
-To learn more about Next.js, take a look at the following resources:
+### Chế độ Demo (🎓 Demo Game)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Dành cho người chơi mới, làm quen với cách chơi:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Không giới hạn thời gian
+2. 5 câu hỏi đơn giản
+3. Hướng dẫn chi tiết từng bước
+4. Phù hợp để luyện tập trước khi vào thi đấu
 
-## Deploy on Vercel
+### Chế độ Thi đấu (👥 Multiplayer)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Thi đấu giữa 2 đội:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Mỗi đội chơi luân phiên** - 60 giây mỗi lượt
+2. **Trả lời câu hỏi**: Nhập đáp án để mở khóa từ (+10 điểm)
+3. **Tìm từ trên lưới**: Kéo chuột qua các chữ cái để tìm từ đã mở khóa (+20 điểm)
+4. **Chiến thắng**: Đội nào có nhiều điểm hơn khi hết câu hỏi
+
+### Quy tắc chi tiết
+
+- ⏰ Timer bắt đầu ngay khi đến lượt chơi
+- ✅ Trả lời đúng → từ được mở khóa (màu xanh dương)
+- 🔍 Chỉ tìm được từ đã mở khóa
+- 🎯 Kéo chuột theo đường thẳng: ngang, dọc, chéo (4 hướng)
+- ⏭️ Hết giờ → chuyển lượt sang đội kia
+- 🏆 Đội nhiều điểm hơn thắng cuộc
+
+## 📁 Cấu trúc Project
+
+```
+game/
+├── src/
+│   ├── app/
+│   │   ├── page.tsx              # Trang chủ - Menu chính
+│   │   ├── demo/
+│   │   │   └── page.tsx          # Chế độ Demo
+│   │   └── multiplayer/
+│   │       └── page.tsx          # Chế độ Thi đấu 2 đội
+│   ├── components/
+│   │   ├── QuestionPanel.tsx     # Panel hiển thị câu hỏi (Demo)
+│   │   ├── TeamQuestionPanel.tsx # Panel câu hỏi với trạng thái (Multiplayer)
+│   │   ├── WordGrid.tsx          # Lưới 20×20 tìm từ
+│   │   ├── Timer.tsx             # Đồng hồ đếm ngược 60s
+│   │   └── TeamScoreboard.tsx    # Bảng điểm 2 đội
+│   ├── data/
+│   │   ├── questions.ts          # 30 câu hỏi lịch sử (2 bộ × 15)
+│   │   └── demoQuestions.ts      # 5 câu hỏi demo đơn giản
+│   ├── types/
+│   │   └── game.ts               # TypeScript types
+│   └── utils/
+│       └── gridGenerator.ts      # Logic tạo lưới và đặt từ
+├── public/                       # Assets tĩnh
+├── eslint.config.mjs
+├── next.config.ts
+├── tailwind.config.ts
+├── tsconfig.json
+└── package.json
+```
+
+## 📝 Nội dung câu hỏi
+
+Game bao gồm **30 câu hỏi** về các chủ đề:
+
+- 🏛️ Lịch sử thành lập Đảng
+- 👤 Các lãnh tụ Đảng (Hồ Chí Minh, Trường Chinh, Lê Duẩn, v.v.)
+- 📜 Các phong trào và sự kiện lịch sử
+- 🎓 Học thuyết và tư tưởng Đảng
+- 🌟 Các mốc thời gian quan trọng
+
+Câu hỏi được chia đều cho 2 đội (mỗi đội 15 câu khác nhau).
+
+## 🎨 Một số screenshots
+
+_(Có thể thêm screenshots của game tại đây)_
+
+## 🤝 Đóng góp
+
+Mọi đóng góp đều được chào đón! Vui lòng:
+
+1. Fork repository
+2. Tạo branch mới (`git checkout -b feature/AmazingFeature`)
+3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to branch (`git push origin feature/AmazingFeature`)
+5. Mở Pull Request
+
+## 📄 License
+
+Project này được phát triển cho mục đích giáo dục.
+
+## 🙏 Credits
+
+- Built with [Next.js](https://nextjs.org)
+- Styled with [Tailwind CSS](https://tailwindcss.com)
+- Deployed on [Vercel](https://vercel.com)
+
+---
+
+**Phát triển bởi:** [Tên của bạn]  
+**Phiên bản:** 1.0.0  
+**Cập nhật lần cuối:** Tháng 2, 2026
