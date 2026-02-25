@@ -10,7 +10,7 @@ import { TeamState, TeamId, GridCell } from "@/types/game";
 import { generateGrid, checkWord } from "@/utils/gridGenerator";
 import { createTeam1Questions, createTeam2Questions } from "@/data/questions";
 
-const TURN_TIME = 120; // Giây mỗi lượt
+const TURN_TIME = 180; // Giây mỗi lượt
 
 type GamePhase = "setup" | "playing" | "finished";
 
@@ -341,7 +341,7 @@ export default function MultiplayerGame() {
                     Luật chơi
                   </h3>
                   <ul className="text-[#5a5349] text-sm space-y-1">
-                    <li>• 120 giây mỗi lượt</li>
+                    <li>• 180 giây mỗi lượt</li>
                     <li>• Trả lời đúng: +10 điểm</li>
                     <li>• Tìm đúng từ: +20 điểm</li>
                     <li>• 2 đội chơi luân phiên</li>
@@ -481,7 +481,7 @@ export default function MultiplayerGame() {
                   >
                     Thi đấu — Lượt {turnNumber}
                   </h1>
-                  <p className="text-sm text-[#5a5349]">120 giây mỗi lượt</p>
+                  <p className="text-sm text-[#5a5349]">180 giây mỗi lượt</p>
                 </div>
               </div>
               <Link

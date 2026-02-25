@@ -143,7 +143,7 @@ export default function Home() {
                 </span>
                 <div>
                   <strong className="block text-[#1a1a1a] mb-0.5">
-                    120 giây mỗi lượt
+                    180 giây mỗi lượt
                   </strong>
                   <p className="text-[#5a5349] text-sm">
                     Trả lời đúng để mở từ (+10 điểm)

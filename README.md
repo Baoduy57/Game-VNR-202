@@ -12,9 +12,9 @@ Game này kết hợp hai thể loại chơi:
 ### ✨ Tính năng chính
 
 - 🎓 **Chế độ Demo**: Thực hành với 5 câu hỏi đơn giản, không giới hạn thời gian
-- 👥 **Chế độ Thi đấu**: 2 đội chơi luân phiên với 120 giây mỗi lượt
+- 👥 **Chế độ Thi đấu**: 2 đội chơi luân phiên với 180 giây mỗi lượt
 - 📚 **30 câu hỏi lịch sử**: Mỗi đội nhận 15 câu hỏi khác nhau về Đảng Cộng sản Việt Nam
-- ⏱️ **Timer động**: Đếm ngược 120 giây tự động, hiển thị progress bar
+- ⏱️ **Timer động**: Đếm ngược 180 giây tự động, hiển thị progress bar
 - 🎯 **Hệ thống điểm**:
   - +10 điểm cho mỗi câu trả lời đúng
   - +20 điểm cho mỗi từ tìm được
@@ -92,7 +92,7 @@ Dành cho người chơi mới, làm quen với cách chơi:
 
 Thi đấu giữa 2 đội:
 
-1. **Mỗi đội chơi luân phiên** - 120 giây mỗi lượt
+1. **Mỗi đội chơi luân phiên** - 180 giây mỗi lượt
 2. **Trả lời câu hỏi**: Nhập đáp án để mở khóa từ (+10 điểm)
 3. **Tìm từ trên lưới**: Kéo chuột qua các chữ cái để tìm từ đã mở khóa (+20 điểm)
 4. **Chiến thắng**: Đội nào có nhiều điểm hơn khi hết câu hỏi
