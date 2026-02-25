@@ -17,27 +17,32 @@ export default function TeamScoreboard({
 
   return (
     <div
-      className={`p-6 rounded-xl transition-all ${
+      className={`rounded-xl border p-5 transition-all ${
         isActive
-          ? "bg-blue-500 text-white shadow-2xl scale-105 border-4 border-yellow-400"
-          : "bg-white text-gray-800 shadow-lg border-2 border-gray-200"
+          ? "bg-[#c41e3a]/5 border-[#c41e3a]/40 shadow-md"
+          : "bg-white border-[#e8e2d9]"
       }`}
     >
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-3">
           <div
-            className={`w-12 h-12 rounded-full flex items-center justify-center text-2xl font-bold ${
+            className={`w-10 h-10 rounded-lg flex items-center justify-center text-lg font-bold ${
               isActive
-                ? "bg-yellow-400 text-blue-600"
-                : "bg-blue-500 text-white"
+                ? "bg-[#c41e3a] text-white"
+                : "bg-[#e8e2d9] text-[#5a5349]"
             }`}
           >
             {team.id}
           </div>
-          <h2 className="text-2xl font-bold">{team.name}</h2>
+          <h2
+            className="font-bold text-[#1a1a1a]"
+            style={{ fontFamily: "var(--font-playfair), Georgia, serif" }}
+          >
+            {team.name}
+          </h2>
         </div>
         {isActive && (
-          <span className="bg-yellow-400 text-blue-600 px-4 py-2 rounded-full font-bold text-sm">
+          <span className="px-3 py-1 rounded-full bg-[#c41e3a] text-white text-xs font-semibold">
             Đang chơi
           </span>
         )}
@@ -45,43 +50,31 @@ export default function TeamScoreboard({
 
       <div className="space-y-3">
         <div className="flex justify-between items-center">
-          <span className="font-medium">Điểm số:</span>
-          <span className="text-3xl font-bold">{team.score}</span>
+          <span className="text-[#5a5349] text-sm">Điểm</span>
+          <span className="text-2xl font-bold text-[#2d5a27]">
+            {team.score}
+          </span>
         </div>
-
-        <div className={`h-px ${isActive ? "bg-blue-300" : "bg-gray-300"}`} />
-
+        <div className="h-px bg-[#e8e2d9]" />
         <div className="grid grid-cols-2 gap-4 text-sm">
           <div>
-            <div
-              className={`font-medium mb-1 ${
-                isActive ? "text-blue-100" : "text-gray-600"
-              }`}
-            >
-              Đã trả lời
-            </div>
-            <div className="text-2xl font-bold">
+            <span className="text-[#5a5349]">Đã trả lời</span>
+            <p className="font-semibold text-[#1a1a1a]">
               {answeredCount}/{totalQuestions}
-            </div>
+            </p>
           </div>
           <div>
-            <div
-              className={`font-medium mb-1 ${
-                isActive ? "text-blue-100" : "text-gray-600"
-              }`}
-            >
-              Đã tìm thấy
-            </div>
-            <div className="text-2xl font-bold">
+            <span className="text-[#5a5349]">Đã tìm</span>
+            <p className="font-semibold text-[#1a1a1a]">
               {foundCount}/{totalQuestions}
-            </div>
+            </p>
           </div>
         </div>
       </div>
 
       {team.isCompleted && (
-        <div className="mt-4 bg-green-500 text-white px-4 py-2 rounded-lg text-center font-bold">
-          🏆 Hoàn thành!
+        <div className="mt-4 py-2 rounded-lg bg-[#2d5a27]/10 text-[#2d5a27] text-center text-sm font-semibold">
+          Hoàn thành
         </div>
       )}
     </div>

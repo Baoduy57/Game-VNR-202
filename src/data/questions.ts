@@ -1,6 +1,6 @@
 import { Question } from "@/types/game";
 
-// Bộ câu hỏi cho Đội 1 - Lịch sử Đảng Cộng sản Việt Nam (Phần 1)
+// ================= TEAM 1 =================
 export const team1Questions: Omit<Question, "id" | "isAnswered" | "isFound">[] =
   [
     {
@@ -27,12 +27,7 @@ export const team1Questions: Omit<Question, "id" | "isAnswered" | "isFound">[] =
       answer: "DUONGCACHMENH",
     },
     {
-      question: "Cơ quan ngôn luận của Đông Dương Cộng sản Đảng?",
-      answer: "BUALIEM",
-    },
-    {
-      question:
-        "Tờ báo do Nguyễn Ái Quốc sáng lập năm 1925, mở đầu báo chí cách mạng Việt Nam?",
+      question: "Nguyễn Ái Quốc ra tờ báo nào năm 1925?",
       answer: "THANHNIEN",
     },
     {
@@ -55,51 +50,57 @@ export const team1Questions: Omit<Question, "id" | "isAnswered" | "isFound">[] =
       answer: "VOSANHOA",
     },
     {
-      question: "Tổ chức tiền thân trực tiếp của Đảng Cộng sản Việt Nam?",
-      answer: "HOIVIETNAMCACHMANGTHANHVIEN",
+      question:
+        "Tổ chức tiền thân trực tiếp của Đảng Cộng sản Việt Nam còn gọi là Hội gì?",
+      answer: "HOITHANHNIEN",
     },
     {
-      question: "Địa điểm diễn ra Hội nghị thành lập Đảng đầu năm 1930?",
-      answer: "CUULONG",
+      question: "Hội nghị thành lập Đảng đầu năm 1930 diễn ra tại đâu?",
+      answer: "HUONGCANG",
     },
     {
       question: "Người chủ trì Hội nghị thành lập Đảng?",
       answer: "NGUYENAIQUOC",
     },
     {
-      question: "Hai tổ chức trực tiếp hợp nhất tại Hội nghị thành lập Đảng?",
-      answer: "DONGDUONGVAANNAM",
+      question:
+        "Có bao nhiêu tổ chức cộng sản được hợp nhất tại Hội nghị đầu năm 1930?",
+      answer: "BA",
     },
-  ];
-
-// Bộ câu hỏi cho Đội 2 - Lịch sử Đảng Cộng sản Việt Nam (Phần 2)
-export const team2Questions: Omit<Question, "id" | "isAnswered" | "isFound">[] =
-  [
     {
       question:
         "Một trong hai đại biểu của Đông Dương Cộng sản Đảng dự Hội nghị thành lập Đảng?",
       answer: "NGUYENDUCCANH",
+    },
+  ];
+
+// ================= TEAM 2 =================
+export const team2Questions: Omit<Question, "id" | "isAnswered" | "isFound">[] =
+  [
+    {
+      question: "Cương lĩnh chính trị đầu tiên của Đảng do ai soạn thảo?",
+      answer: "NGUYENAIQUOC",
     },
     {
       question: "Tên chính thức của Đảng được thống nhất tại Hội nghị?",
       answer: "DANGCONGSANVIETNAM",
     },
     {
-      question: "Vấn đề lịch sử lớn nhất được giải quyết khi Đảng ra đời?",
-      answer: "KHOANGHOANGDUONGLOI",
+      question: "Hội nghị thành lập Đảng diễn ra vào năm nào?",
+      answer: "1930",
     },
     {
       question: "Điều kiện tư tưởng quan trọng nhất để vào Đảng?",
-      answer: "CHUNGHIACONGSAN",
+      answer: "CHUNGHIAMACLENIN",
     },
     {
-      question: "Đại hội nào quyết định lấy ngày 3/2 làm ngày thành lập Đảng?",
-      answer: "DAIHOIBA",
+      question: "Ngày thành lập Đảng Cộng sản Việt Nam?",
+      answer: "3THANG21930",
     },
     {
       question:
-        "Mục tiêu chiến lược của cách mạng Việt Nam theo Cương lĩnh đầu tiên?",
-      answer: "TUSANDANQUYEN",
+        "Theo Cương lĩnh đầu tiên, cách mạng Việt Nam phải trải qua mấy giai đoạn?",
+      answer: "HAI",
     },
     {
       question: "Nhiệm vụ hàng đầu của cách mạng Việt Nam theo Cương lĩnh?",
@@ -111,7 +112,7 @@ export const team2Questions: Omit<Question, "id" | "isAnswered" | "isFound">[] =
     },
     {
       question: "Văn kiện không thuộc Cương lĩnh chính trị đầu tiên?",
-      answer: "LUANCUONGCHINHTRỊ",
+      answer: "LUANCUONGCHINHTRI",
     },
     {
       question: "Giai cấp lãnh đạo cách mạng Việt Nam?",
@@ -122,8 +123,9 @@ export const team2Questions: Omit<Question, "id" | "isAnswered" | "isFound">[] =
       answer: "BAOLUCCACHMANG",
     },
     {
-      question: "Cách mạng Việt Nam là một bộ phận của cuộc cách mạng nào?",
-      answer: "CACHMANGVOSAN",
+      question:
+        "Cách mạng Việt Nam gắn liền với phong trào cách mạng của giai cấp nào trên thế giới?",
+      answer: "CONGNHAN",
     },
     {
       question: "Địa điểm thành lập chi bộ cộng sản đầu tiên ở Việt Nam?",
@@ -140,7 +142,7 @@ export const team2Questions: Omit<Question, "id" | "isAnswered" | "isFound">[] =
     },
   ];
 
-// Hàm tạo danh sách câu hỏi với ID cho Đội 1
+// ================= FUNCTIONS =================
 export function createTeam1Questions(): Question[] {
   return team1Questions.map((q, index) => ({
     ...q,
@@ -150,7 +152,6 @@ export function createTeam1Questions(): Question[] {
   }));
 }
 
-// Hàm tạo danh sách câu hỏi với ID cho Đội 2
 export function createTeam2Questions(): Question[] {
   return team2Questions.map((q, index) => ({
     ...q,
@@ -160,7 +161,7 @@ export function createTeam2Questions(): Question[] {
   }));
 }
 
-// Giữ lại hàm cũ để tương thích (sử dụng bộ câu hỏi đội 1)
+// Giữ tương thích cũ
 export function createQuestions(): Question[] {
   return createTeam1Questions();
 }

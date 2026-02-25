@@ -34,23 +34,23 @@ export default function Timer({
   const isLowTime = timeRemaining <= 10;
 
   return (
-    <div className="w-full">
+    <div className="w-full rounded-xl border border-[#e8e2d9] bg-white p-4">
       <div className="flex justify-between items-center mb-2">
-        <span className="text-sm font-medium text-gray-600">
+        <span className="text-sm font-medium text-[#5a5349]">
           Thời gian còn lại
         </span>
         <span
-          className={`text-3xl font-bold ${
-            isLowTime ? "text-red-600 animate-pulse" : "text-blue-600"
+          className={`text-2xl font-bold tabular-nums ${
+            isLowTime ? "text-[#c41e3a] animate-pulse" : "text-[#2d5a27]"
           }`}
         >
           {timeRemaining}s
         </span>
       </div>
-      <div className="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
+      <div className="w-full bg-[#e8e2d9] rounded-full h-2.5 overflow-hidden">
         <div
           className={`h-full rounded-full transition-all duration-1000 ${
-            isLowTime ? "bg-red-500" : "bg-blue-500"
+            isLowTime ? "bg-[#c41e3a]" : "bg-[#2d5a27]"
           }`}
           style={{ width: `${percentage}%` }}
         />

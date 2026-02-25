@@ -33,7 +33,7 @@ function canPlaceWord(
   word: string,
   startRow: number,
   startCol: number,
-  direction: Direction,
+  direction: Direction
 ): boolean {
   const size = grid.length;
   const wordLength = word.length;
@@ -80,7 +80,7 @@ function placeWord(
   word: string,
   startRow: number,
   startCol: number,
-  direction: Direction,
+  direction: Direction
 ): void {
   const wordLength = word.length;
 
@@ -114,7 +114,7 @@ function placeWord(
 function tryPlaceWord(
   grid: GridCell[][],
   word: string,
-  maxAttempts: number = 300,
+  maxAttempts: number = 300
 ): WordPosition | null {
   const size = grid.length;
 
@@ -153,36 +153,43 @@ function fillEmptyCells(grid: GridCell[][]): void {
 }
 
 // Hàm chính: Tạo lưới từ danh sách câu hỏi
+// Trả về thêm placedWords và failedWords để kiểm tra
 export function generateGrid(questions: Question[]): {
   grid: GridCell[][];
   wordPositions: WordPosition[];
+  placedWords: string[];
+  failedWords: string[];
 } {
   const grid = createEmptyGrid();
   const wordPositions: WordPosition[] = [];
+  const placedWords: string[] = [];
+  const failedWords: string[] = [];
 
-  // Đặt tất cả các đáp án vào lưới
   for (const question of questions) {
-    const word = question.answer.toUpperCase().replace(/\s/g, ""); // Loại bỏ khoảng trắng
+    const word = question.answer.toUpperCase().replace(/\s/g, "");
     const position = tryPlaceWord(grid, word);
 
     if (position) {
       wordPositions.push(position);
+      placedWords.push(word);
     } else {
-      console.warn(`Không thể đặt từ: ${word}`);
+      failedWords.push(word);
+      console.warn(
+        `Không thể đặt từ vào lưới: ${word} (${word.length} ký tự, lưới tối đa ${grid.length})`
+      );
     }
   }
 
-  // Điền chữ cái ngẫu nhiên vào các ô trống
   fillEmptyCells(grid);
 
-  return { grid, wordPositions };
+  return { grid, wordPositions, placedWords, failedWords };
 }
 
 // Lấy các ô theo đường đi từ start đến end
 export function getCellsInPath(
   grid: GridCell[][],
   startCell: GridCell,
-  endCell: GridCell,
+  endCell: GridCell
 ): GridCell[] {
   const cells: GridCell[] = [];
   const rowDiff = endCell.row - startCell.row;
@@ -213,7 +220,7 @@ export function getCellsInPath(
 // Kiểm tra từ có khớp không
 export function checkWord(
   cells: GridCell[],
-  unlockedWords: string[],
+  unlockedWords: string[]
 ): string | null {
   const word = cells.map((cell) => cell.letter).join("");
   const reversedWord = word.split("").reverse().join("");

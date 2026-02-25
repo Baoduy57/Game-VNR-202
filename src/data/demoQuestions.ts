@@ -8,10 +8,6 @@ export const demoQuestions: Omit<Question, "id" | "isAnswered" | "isFound">[] =
       answer: "HANOI",
     },
     {
-      question: "Đảng Cộng sản Việt Nam được thành lập năm nào?",
-      answer: "NAMMOTNGHINCHINBAMUOI",
-    },
-    {
       question: "Vị lãnh tụ sáng lập Đảng Cộng sản Việt Nam?",
       answer: "NGUYENAIQUOC",
     },
@@ -21,7 +17,11 @@ export const demoQuestions: Omit<Question, "id" | "isAnswered" | "isFound">[] =
     },
     {
       question: "Ngày Quốc khánh Việt Nam?",
-      answer: "HAINAMSAU",
+      answer: "HAITHANGCHIN",
+    },
+    {
+      question: "Đảng Cộng sản Việt Nam được thành lập năm nào?",
+      answer: "MOTCHINBAMUOI",
     },
   ];
 
